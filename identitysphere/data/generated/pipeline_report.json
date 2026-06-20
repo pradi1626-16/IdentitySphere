@@ -1,0 +1,891 @@
+{
+  "metadata": {
+    "product": "IdentitySphere AI",
+    "version": "0.3.0",
+    "phase": "1+2+3",
+    "run_timestamp": "2026-06-19T21:41:42.810778",
+    "pipeline_duration_seconds": 18.42
+  },
+  "data_summary": {
+    "total_identities": 370,
+    "platforms_covered": 5,
+    "platform_breakdown": {
+      "active_directory": {
+        "total": 155,
+        "active": 148,
+        "disabled": 7
+      },
+      "salesforce": {
+        "total": 176,
+        "active": 169,
+        "disabled": 7
+      },
+      "github": {
+        "total": 183,
+        "disabled": 8,
+        "active": 175
+      },
+      "aws_iam": {
+        "total": 139,
+        "active": 133,
+        "disabled": 6
+      },
+      "okta": {
+        "total": 165,
+        "active": 162,
+        "disabled": 3
+      }
+    },
+    "total_groups": 45,
+    "total_roles": 30,
+    "total_permissions": 100,
+    "total_audit_events": 800,
+    "total_offboarding_records": 70,
+    "graph_stats": {
+      "total_nodes": 1363,
+      "total_edges": 3016,
+      "identity": 370,
+      "account": 818,
+      "group": 45,
+      "role": 30,
+      "permission": 100
+    },
+    "anomaly_distribution": {
+      "orphaned_stale": 36,
+      "over_privileged": 30,
+      "privilege_escalation": 20,
+      "token_abuse": 20,
+      "false_positive_traps": 51,
+      "normal": 213
+    }
+  },
+  "resolution_summary": {
+    "identities_before": 370,
+    "identities_after": 370,
+    "merges_performed": 0,
+    "candidates_evaluated": 1,
+    "avg_confidence": 0.0
+  },
+  "privilege_summary": {
+    "total_profiles": 370,
+    "avg_privilege_score": 16.928702896444833,
+    "median_privilege_score": 6.630824372759856,
+    "over_privileged_count": 11,
+    "cross_platform_admin_count": 105,
+    "identities_with_sensitive_access": 235
+  },
+  "detection_summary": {
+    "total_risk_events": 633,
+    "identities_with_risks": 270,
+    "risk_distribution": {
+      "orphaned_account": 53,
+      "mfa_disabled": 175,
+      "cross_platform_admin": 105,
+      "offboarding_gap": 31,
+      "stale_account": 85,
+      "sod_violation": 72,
+      "privilege_escalation": 100,
+      "token_abuse": 12
+    },
+    "severity_distribution": {
+      "high": 120,
+      "critical": 172,
+      "medium": 129,
+      "low": 212
+    },
+    "detection_accuracy": {
+      "true_positives": 99,
+      "false_positives_from_fp_traps": 37,
+      "false_negatives": 7,
+      "precision": 0.367,
+      "recall": 0.934,
+      "f1_score": 0.527,
+      "total_actual_anomalous": 106,
+      "total_detected": 270
+    }
+  },
+  "behavioral_summary": {
+    "total_profiled": 370,
+    "anomalous_count": 12,
+    "avg_anomaly_score": 21.93,
+    "anomaly_threshold": 65.0,
+    "feature_stats": {
+      "login_frequency": {
+        "min": 0.0,
+        "max": 0.233,
+        "mean": 0.035,
+        "median": 0.0
+      },
+      "platform_spread": {
+        "min": 0.0,
+        "max": 0.8,
+        "mean": 0.425,
+        "median": 0.4
+      },
+      "privilege_to_usage": {
+        "min": 0.0,
+        "max": 10.0,
+        "mean": 3.032,
+        "median": 0.824
+      },
+      "dormancy": {
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 13.261,
+        "median": 3.014
+      },
+      "hour_entropy": {
+        "min": 0.0,
+        "max": 0.612,
+        "mean": 0.101,
+        "median": 0.0
+      }
+    }
+  },
+  "scoring_summary": {
+    "total_scored": 370,
+    "avg_composite_score": 17.49,
+    "severity_distribution": {
+      "medium": 90,
+      "high": 14,
+      "low": 265,
+      "critical": 1
+    },
+    "consolidation": {
+      "raw_signals_count": 633,
+      "consolidated_incidents_count": 76,
+      "reduction_percentage": 88.0,
+      "identities_suppressed": 249,
+      "suppression_rate": 67.3
+    },
+    "suppression_stats": {
+      "mfa_all_platforms": 214,
+      "active_admin": 33,
+      "on_call": 51,
+      "recent_role_change": 51
+    }
+  },
+  "alert_consolidation": {
+    "raw_signals_count": 633,
+    "consolidated_incidents_count": 76,
+    "reduction_percentage": 88.0,
+    "identities_suppressed": 249,
+    "suppression_rate": 67.3
+  },
+  "attack_graph_stats": {
+    "total_nodes": 1389,
+    "total_edges": 4516,
+    "node_types": {
+      "identity": 370,
+      "account": 818,
+      "group": 45,
+      "role": 30,
+      "permission": 100,
+      "resource": 26
+    },
+    "edge_types": {
+      "has_account": 818,
+      "member_of": 1526,
+      "bridges": 1400,
+      "has_role": 556,
+      "grants": 109,
+      "parent_of": 7,
+      "accesses": 100
+    },
+    "admin_targets": 14,
+    "total_resources": 26
+  },
+  "blast_radius_summary": {
+    "assessed_count": 10,
+    "severity_distribution": {
+      "high": 5,
+      "medium": 3,
+      "critical": 2
+    },
+    "top_blast_radii": [
+      {
+        "identity_id": "ID-0077",
+        "display_name": "Kari Hall",
+        "severity": "critical",
+        "reachable_resources": 15,
+        "reachable_permissions": 21,
+        "reachable_admin_roles": 0,
+        "impacted_platforms": [
+          "active_directory",
+          "aws_iam",
+          "github",
+          "salesforce"
+        ],
+        "resource_by_platform": {
+          "salesforce": 4,
+          "github": 5,
+          "aws_iam": 4,
+          "active_directory": 2
+        },
+        "admin_resource_count": 0
+      },
+      {
+        "identity_id": "ID-0042",
+        "display_name": "Brett Thomas",
+        "severity": "critical",
+        "reachable_resources": 15,
+        "reachable_permissions": 23,
+        "reachable_admin_roles": 4,
+        "impacted_platforms": [
+          "active_directory",
+          "github",
+          "okta",
+          "salesforce"
+        ],
+        "resource_by_platform": {
+          "github": 4,
+          "okta": 4,
+          "active_directory": 3,
+          "salesforce": 4
+        },
+        "admin_resource_count": 0
+      },
+      {
+        "identity_id": "ID-0037",
+        "display_name": "Marissa Sutton",
+        "severity": "high",
+        "reachable_resources": 14,
+        "reachable_permissions": 22,
+        "reachable_admin_roles": 4,
+        "impacted_platforms": [
+          "active_directory",
+          "github",
+          "okta",
+          "salesforce"
+        ],
+        "resource_by_platform": {
+          "github": 3,
+          "salesforce": 3,
+          "okta": 4,
+          "active_directory": 4
+        },
+        "admin_resource_count": 0
+      },
+      {
+        "identity_id": "ID-0071",
+        "display_name": "Lindsay Scott",
+        "severity": "high",
+        "reachable_resources": 13,
+        "reachable_permissions": 20,
+        "reachable_admin_roles": 0,
+        "impacted_platforms": [
+          "active_directory",
+          "aws_iam",
+          "github",
+          "okta"
+        ],
+        "resource_by_platform": {
+          "okta": 2,
+          "active_directory": 2,
+          "github": 5,
+          "aws_iam": 4
+        },
+        "admin_resource_count": 0
+      },
+      {
+        "identity_id": "ID-0059",
+        "display_name": "Amanda Mckenzie",
+        "severity": "high",
+        "reachable_resources": 13,
+        "reachable_permissions": 18,
+        "reachable_admin_roles": 4,
+        "impacted_platforms": [
+          "active_directory",
+          "aws_iam",
+          "github",
+          "okta"
+        ],
+        "resource_by_platform": {
+          "okta": 4,
+          "aws_iam": 1,
+          "active_directory": 5,
+          "github": 3
+        },
+        "admin_resource_count": 0
+      },
+      {
+        "identity_id": "ID-0078",
+        "display_name": "Barbara Williams",
+        "severity": "high",
+        "reachable_resources": 12,
+        "reachable_permissions": 18,
+        "reachable_admin_roles": 0,
+        "impacted_platforms": [
+          "active_directory",
+          "aws_iam",
+          "okta",
+          "salesforce"
+        ],
+        "resource_by_platform": {
+          "salesforce": 4,
+          "active_directory": 2,
+          "okta": 3,
+          "aws_iam": 3
+        },
+        "admin_resource_count": 0
+      },
+      {
+        "identity_id": "ID-0014",
+        "display_name": "Dominique Potts",
+        "severity": "high",
+        "reachable_resources": 11,
+        "reachable_permissions": 14,
+        "reachable_admin_roles": 0,
+        "impacted_platforms": [
+          "aws_iam",
+          "github",
+          "salesforce"
+        ],
+        "resource_by_platform": {
+          "github": 3,
+          "aws_iam": 3,
+          "salesforce": 5
+        },
+        "admin_resource_count": 0
+      },
+      {
+        "identity_id": "ID-0028",
+        "display_name": "Thomas Smith",
+        "severity": "medium",
+        "reachable_resources": 7,
+        "reachable_permissions": 8,
+        "reachable_admin_roles": 0,
+        "impacted_platforms": [
+          "github",
+          "salesforce"
+        ],
+        "resource_by_platform": {
+          "salesforce": 5,
+          "github": 2
+        },
+        "admin_resource_count": 0
+      },
+      {
+        "identity_id": "ID-0052",
+        "display_name": "Brandon Stewart",
+        "severity": "medium",
+        "reachable_resources": 7,
+        "reachable_permissions": 11,
+        "reachable_admin_roles": 2,
+        "impacted_platforms": [
+          "okta",
+          "salesforce"
+        ],
+        "resource_by_platform": {
+          "salesforce": 4,
+          "okta": 3
+        },
+        "admin_resource_count": 0
+      },
+      {
+        "identity_id": "ID-0012",
+        "display_name": "Maria Montes",
+        "severity": "medium",
+        "reachable_resources": 5,
+        "reachable_permissions": 5,
+        "reachable_admin_roles": 0,
+        "impacted_platforms": [
+          "aws_iam",
+          "github"
+        ],
+        "resource_by_platform": {
+          "github": 2,
+          "aws_iam": 3
+        },
+        "admin_resource_count": 0
+      }
+    ],
+    "whatif_example": {
+      "simulation_type": "group_removal",
+      "description": "Remove Lindsay Scott from group group:okta:grp-okt-006",
+      "identity_id": "ID-0071",
+      "original_resources": 13,
+      "simulated_resources": 13,
+      "risk_reduction_pct": 0.0,
+      "resources_removed_count": 0,
+      "severity_change": "high -> high",
+      "explanation": "Simulation: Remove Lindsay Scott from group group:okta:grp-okt-006. Resources: 13 -> 13 (0.0% reduction). Severity: high -> high."
+    }
+  },
+  "success_metrics": {
+    "identity_coverage": "100.0%",
+    "identity_coverage_met": true,
+    "risk_scenarios_detected": 8,
+    "alert_consolidation_ratio": "88.0%",
+    "risk_explainability": "All scores expose factor contributions and suppression audit trail"
+  },
+  "top_risky_identities": [
+    {
+      "identity_id": "ID-0071",
+      "display_name": "Lindsay Scott",
+      "department": "DevOps",
+      "risk_type": "composite",
+      "severity": "critical",
+      "score": 72.32,
+      "raw_score": 72.32,
+      "suppression_multiplier": 1.0,
+      "title": "Composite risk: Lindsay Scott (CRITICAL - 72.32/100)",
+      "factors": {
+        "privilege_breadth": 24.73,
+        "cross_platform_exposure": 16.0,
+        "dormancy": 0.04,
+        "detector_severity": 25.0,
+        "behavioral_anomaly": 6.55
+      },
+      "suppressions_applied": [],
+      "affected_platforms": [
+        "okta",
+        "active_directory",
+        "github",
+        "aws_iam"
+      ],
+      "remediation_steps": [
+        "Conduct privilege access review and remove unnecessary permissions",
+        "Review cross-platform admin necessity; implement JIT access",
+        "Address critical/high detector findings immediately"
+      ],
+      "compliance_refs": [
+        "NIST AC-2",
+        "NIST AC-6",
+        "CIS 5",
+        "CIS 6"
+      ],
+      "evidence_count": 10
+    },
+    {
+      "identity_id": "ID-0014",
+      "display_name": "Dominique Potts",
+      "department": "Sales",
+      "risk_type": "composite",
+      "severity": "high",
+      "score": 64.39,
+      "raw_score": 64.39,
+      "suppression_multiplier": 1.0,
+      "title": "Composite risk: Dominique Potts (HIGH - 64.39/100)",
+      "factors": {
+        "privilege_breadth": 13.44,
+        "cross_platform_exposure": 8.0,
+        "dormancy": 7.11,
+        "detector_severity": 25.0,
+        "behavioral_anomaly": 10.84
+      },
+      "suppressions_applied": [],
+      "affected_platforms": [
+        "github",
+        "okta",
+        "aws_iam",
+        "salesforce"
+      ],
+      "remediation_steps": [
+        "Address critical/high detector findings immediately",
+        "Investigate anomalous behavioral pattern; verify account ownership"
+      ],
+      "compliance_refs": [
+        "NIST AC-2",
+        "NIST AC-6",
+        "CIS 5",
+        "CIS 6"
+      ],
+      "evidence_count": 7
+    },
+    {
+      "identity_id": "ID-0012",
+      "display_name": "Maria Montes",
+      "department": "Finance",
+      "risk_type": "composite",
+      "severity": "high",
+      "score": 60.75,
+      "raw_score": 60.75,
+      "suppression_multiplier": 1.0,
+      "title": "Composite risk: Maria Montes (HIGH - 60.75/100)",
+      "factors": {
+        "privilege_breadth": 7.93,
+        "cross_platform_exposure": 8.0,
+        "dormancy": 9.99,
+        "detector_severity": 25.0,
+        "behavioral_anomaly": 9.83
+      },
+      "suppressions_applied": [],
+      "affected_platforms": [
+        "github",
+        "aws_iam",
+        "okta"
+      ],
+      "remediation_steps": [
+        "Investigate dormant account; disable if no longer needed",
+        "Address critical/high detector findings immediately",
+        "Investigate anomalous behavioral pattern; verify account ownership"
+      ],
+      "compliance_refs": [
+        "NIST AC-2",
+        "NIST AC-6",
+        "CIS 5",
+        "CIS 6"
+      ],
+      "evidence_count": 8
+    },
+    {
+      "identity_id": "ID-0028",
+      "display_name": "Thomas Smith",
+      "department": "IT Operations",
+      "risk_type": "composite",
+      "severity": "high",
+      "score": 59.37,
+      "raw_score": 59.37,
+      "suppression_multiplier": 1.0,
+      "title": "Composite risk: Thomas Smith (HIGH - 59.37/100)",
+      "factors": {
+        "privilege_breadth": 8.87,
+        "cross_platform_exposure": 8.0,
+        "dormancy": 15.0,
+        "detector_severity": 12.5,
+        "behavioral_anomaly": 15.0
+      },
+      "suppressions_applied": [],
+      "affected_platforms": [
+        "okta",
+        "salesforce",
+        "github"
+      ],
+      "remediation_steps": [
+        "Investigate dormant account; disable if no longer needed",
+        "Investigate anomalous behavioral pattern; verify account ownership"
+      ],
+      "compliance_refs": [
+        "NIST AC-2",
+        "NIST AC-6",
+        "CIS 5",
+        "CIS 6"
+      ],
+      "evidence_count": 2
+    },
+    {
+      "identity_id": "ID-0059",
+      "display_name": "Amanda Mckenzie",
+      "department": "IT Operations",
+      "risk_type": "composite",
+      "severity": "high",
+      "score": 55.35,
+      "raw_score": 65.12,
+      "suppression_multiplier": 0.85,
+      "title": "Composite risk: Amanda Mckenzie (HIGH - 55.35/100)",
+      "factors": {
+        "privilege_breadth": 23.66,
+        "cross_platform_exposure": 12.0,
+        "dormancy": 0.25,
+        "detector_severity": 25.0,
+        "behavioral_anomaly": 4.21
+      },
+      "suppressions_applied": [
+        "active_admin"
+      ],
+      "affected_platforms": [
+        "okta",
+        "aws_iam",
+        "active_directory",
+        "github"
+      ],
+      "remediation_steps": [
+        "Conduct privilege access review and remove unnecessary permissions",
+        "Review cross-platform admin necessity; implement JIT access",
+        "Address critical/high detector findings immediately"
+      ],
+      "compliance_refs": [
+        "NIST AC-2",
+        "NIST AC-6",
+        "CIS 5",
+        "CIS 6"
+      ],
+      "evidence_count": 4
+    },
+    {
+      "identity_id": "ID-0077",
+      "display_name": "Kari Hall",
+      "department": "Security",
+      "risk_type": "composite",
+      "severity": "high",
+      "score": 55.18,
+      "raw_score": 68.97,
+      "suppression_multiplier": 0.8,
+      "title": "Composite risk: Kari Hall (HIGH - 55.18/100)",
+      "factors": {
+        "privilege_breadth": 21.64,
+        "cross_platform_exposure": 16.0,
+        "dormancy": 0.29,
+        "detector_severity": 25.0,
+        "behavioral_anomaly": 6.04
+      },
+      "suppressions_applied": [
+        "mfa_all_platforms"
+      ],
+      "affected_platforms": [
+        "salesforce",
+        "github",
+        "aws_iam",
+        "active_directory"
+      ],
+      "remediation_steps": [
+        "Conduct privilege access review and remove unnecessary permissions",
+        "Review cross-platform admin necessity; implement JIT access",
+        "Address critical/high detector findings immediately"
+      ],
+      "compliance_refs": [
+        "NIST AC-2",
+        "NIST AC-6",
+        "CIS 5",
+        "CIS 6"
+      ],
+      "evidence_count": 7
+    },
+    {
+      "identity_id": "ID-0042",
+      "display_name": "Brett Thomas",
+      "department": "Finance",
+      "risk_type": "composite",
+      "severity": "high",
+      "score": 55.15,
+      "raw_score": 64.88,
+      "suppression_multiplier": 0.85,
+      "title": "Composite risk: Brett Thomas (HIGH - 55.15/100)",
+      "factors": {
+        "privilege_breadth": 19.22,
+        "cross_platform_exposure": 16.0,
+        "dormancy": 0.25,
+        "detector_severity": 25.0,
+        "behavioral_anomaly": 4.41
+      },
+      "suppressions_applied": [
+        "active_admin"
+      ],
+      "affected_platforms": [
+        "github",
+        "okta",
+        "active_directory",
+        "salesforce"
+      ],
+      "remediation_steps": [
+        "Conduct privilege access review and remove unnecessary permissions",
+        "Review cross-platform admin necessity; implement JIT access",
+        "Address critical/high detector findings immediately"
+      ],
+      "compliance_refs": [
+        "NIST AC-2",
+        "NIST AC-6",
+        "CIS 5",
+        "CIS 6"
+      ],
+      "evidence_count": 5
+    },
+    {
+      "identity_id": "ID-0078",
+      "display_name": "Barbara Williams",
+      "department": "Finance",
+      "risk_type": "composite",
+      "severity": "high",
+      "score": 54.66,
+      "raw_score": 68.32,
+      "suppression_multiplier": 0.8,
+      "title": "Composite risk: Barbara Williams (HIGH - 54.66/100)",
+      "factors": {
+        "privilege_breadth": 21.24,
+        "cross_platform_exposure": 16.0,
+        "dormancy": 0.25,
+        "detector_severity": 25.0,
+        "behavioral_anomaly": 5.83
+      },
+      "suppressions_applied": [
+        "mfa_all_platforms"
+      ],
+      "affected_platforms": [
+        "salesforce",
+        "active_directory",
+        "okta",
+        "aws_iam"
+      ],
+      "remediation_steps": [
+        "Conduct privilege access review and remove unnecessary permissions",
+        "Review cross-platform admin necessity; implement JIT access",
+        "Address critical/high detector findings immediately"
+      ],
+      "compliance_refs": [
+        "NIST AC-2",
+        "NIST AC-6",
+        "CIS 5",
+        "CIS 6"
+      ],
+      "evidence_count": 12
+    },
+    {
+      "identity_id": "ID-0037",
+      "display_name": "Marissa Sutton",
+      "department": "Security",
+      "risk_type": "composite",
+      "severity": "high",
+      "score": 51.12,
+      "raw_score": 60.14,
+      "suppression_multiplier": 0.85,
+      "title": "Composite risk: Marissa Sutton (HIGH - 51.12/100)",
+      "factors": {
+        "privilege_breadth": 25.0,
+        "cross_platform_exposure": 12.0,
+        "dormancy": 0.21,
+        "detector_severity": 18.75,
+        "behavioral_anomaly": 4.18
+      },
+      "suppressions_applied": [
+        "active_admin"
+      ],
+      "affected_platforms": [
+        "github",
+        "salesforce",
+        "okta",
+        "active_directory"
+      ],
+      "remediation_steps": [
+        "Conduct privilege access review and remove unnecessary permissions",
+        "Review cross-platform admin necessity; implement JIT access",
+        "Address critical/high detector findings immediately"
+      ],
+      "compliance_refs": [
+        "NIST AC-2",
+        "NIST AC-6",
+        "CIS 5",
+        "CIS 6"
+      ],
+      "evidence_count": 3
+    },
+    {
+      "identity_id": "ID-0052",
+      "display_name": "Brandon Stewart",
+      "department": "Marketing",
+      "risk_type": "composite",
+      "severity": "high",
+      "score": 48.68,
+      "raw_score": 48.68,
+      "suppression_multiplier": 1.0,
+      "title": "Composite risk: Brandon Stewart (HIGH - 48.68/100)",
+      "factors": {
+        "privilege_breadth": 12.77,
+        "cross_platform_exposure": 8.0,
+        "dormancy": 0.99,
+        "detector_severity": 18.75,
+        "behavioral_anomaly": 8.17
+      },
+      "suppressions_applied": [],
+      "affected_platforms": [
+        "salesforce",
+        "okta"
+      ],
+      "remediation_steps": [
+        "Address critical/high detector findings immediately"
+      ],
+      "compliance_refs": [
+        "NIST AC-2",
+        "NIST AC-6",
+        "CIS 5",
+        "CIS 6"
+      ],
+      "evidence_count": 3
+    }
+  ],
+  "compliance_mapping": [
+    {
+      "capability": "Orphaned Account Detection",
+      "risk_type": "orphaned_account",
+      "nist_800_53": "AC-2",
+      "mitre_attack": "T1078",
+      "gdpr": "Art. 5",
+      "cis": "5",
+      "findings_count": 53
+    },
+    {
+      "capability": "Effective Privilege Calculator",
+      "risk_type": "over_privileged",
+      "nist_800_53": "AC-6",
+      "mitre_attack": "T1098",
+      "gdpr": "Art. 5",
+      "cis": "6",
+      "findings_count": 0
+    },
+    {
+      "capability": "Cross-Platform Identity Resolver",
+      "risk_type": "cross_platform_admin",
+      "nist_800_53": "IA-4, AC-6",
+      "mitre_attack": "T1078",
+      "gdpr": "Art. 32",
+      "cis": "5, 6",
+      "findings_count": 105
+    },
+    {
+      "capability": "Token/Credential Abuse Detection",
+      "risk_type": "token_abuse",
+      "nist_800_53": "AC-2, IA-4",
+      "mitre_attack": "T1550",
+      "gdpr": "Art. 32",
+      "cis": "6",
+      "findings_count": 12
+    },
+    {
+      "capability": "Privilege Escalation Detection",
+      "risk_type": "privilege_escalation",
+      "nist_800_53": "AC-2, AC-6",
+      "mitre_attack": "T1098",
+      "gdpr": "Art. 32",
+      "cis": "5, 6",
+      "findings_count": 100
+    },
+    {
+      "capability": "Offboarding Gap Detection",
+      "risk_type": "offboarding_gap",
+      "nist_800_53": "AC-2",
+      "mitre_attack": "T1078",
+      "gdpr": "Art. 32",
+      "cis": "5",
+      "findings_count": 31
+    },
+    {
+      "capability": "Stale Account Detection",
+      "risk_type": "stale_account",
+      "nist_800_53": "AC-2",
+      "mitre_attack": "T1078",
+      "gdpr": "Art. 5",
+      "cis": "5",
+      "findings_count": 85
+    },
+    {
+      "capability": "MFA Gap Detection",
+      "risk_type": "mfa_disabled",
+      "nist_800_53": "IA-4",
+      "mitre_attack": "T1078",
+      "gdpr": "Art. 32",
+      "cis": "6",
+      "findings_count": 175
+    },
+    {
+      "capability": "SoD Violation Detection",
+      "risk_type": "sod_violation",
+      "nist_800_53": "AC-6",
+      "mitre_attack": "T1098",
+      "gdpr": "Art. 5",
+      "cis": "6",
+      "findings_count": 72
+    }
+  ],
+  "timing": {
+    "generate_time": 0.42415428161621094,
+    "ingest_time": 0.03612160682678223,
+    "resolve_time": 0.0068356990814208984,
+    "privilege_time": 0.059572696685791016,
+    "detect_time": 0.7349529266357422,
+    "behavioral_time": 16.93087077140808,
+    "scoring_time": 0.02636575698852539,
+    "attack_graph_time": 0.02831745147705078,
+    "blast_radius_time": 0.02733922004699707,
+    "total_time": 18.417109727859497
+  }
+}
